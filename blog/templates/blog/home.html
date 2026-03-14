@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Home Page {% endblock %}
+{% block content %}
+
+<h1>Home Page In this i add all content reuiqre for my home page</h1>
+
+{% for post in posts  %}
+<div>
+<h2>
+<a href="{% url 'post_detail' post.id %}">
+{{ post.title }}
+</a>
+</h2>
+
+<p>{{ post.content|truncatewords:20 }}</p>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}
